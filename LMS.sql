@@ -1,0 +1,75 @@
+create database LMS	
+
+on primary(
+name=plproject,
+filename='C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\LMS.mdf',
+size=5MB,
+maxsize=unlimited,
+filegrowth=5MB
+)
+
+log on(
+name=plproject_log,
+filename='C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\LMS_log.ldf',
+size=5MB,
+maxsize=unlimited,
+filegrowth=5MB
+)
+/*1*/
+create table student(
+id int primary key identity(1000,1),
+[name] nvarchar(50),
+email nvarchar(50),
+[year] int check([year]<8),
+grade int
+)
+
+create table teacher(
+id int primary key identity(10,1),
+[name] nvarchar(50),
+email nvarchar(50)
+)
+
+create table course(
+id nvarchar(50) primary key,
+[name] nvarchar(50),
+tID int
+CONSTRAINT teacherID_const foreign key(tID) references teacher(id)
+)
+
+create table assignment(
+num int check(num<8),
+deadline nvarchar(50),
+cID nvarchar(50), 
+constraint courseid_const foreign key(cID) references course(id)
+)
+
+create table lecture(
+num int,
+[name] nvarchar(50),
+cID nvarchar(50), 
+constraint courseid1_const foreign key(cID) references course(id)
+)
+
+create table exam(
+num int,
+noOfQues int,
+stdID int,
+constraint studentid_const foreign key(stdID) references student(id),
+cID nvarchar(50), 
+constraint courseid2_const foreign key(cID) references course(id)
+)
+
+create table examScore(
+stdID int,
+constraint studentid1_const foreign key(stdID) references student(id),
+cID nvarchar(50), 
+constraint courseid3_const foreign key(cID) references course(id),
+correctQues int,
+score int
+)
+
+drop database plproject
+
+
+
