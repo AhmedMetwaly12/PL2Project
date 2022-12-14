@@ -1,12 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author pc
- */
+import java.util.ArrayList;
 public class Course {
-    
+ private String name;
+ private int ID;
+ private int hours;
+ private int no_of_sessions;
+ private int price;
+ private  ArrayList <String> courses;
+
+    public Course() {
+    }
+ public void showCourseData(){
+
+ }
+ 
 }
