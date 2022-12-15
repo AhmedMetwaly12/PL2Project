@@ -104,7 +104,7 @@ public void addStudent(String ID,String name,String email,String year,String cou
             try{
         c = s1.connect();
         s = c.createStatement();
-        String query="delete from student where id='"+tID+"'";
+        String query="delete from teacher where id='"+tID+"'";
            s.executeUpdate(query);
            System.out.println("Teacher with the ID "+tID+" has been blocked");
            JOptionPane.showMessageDialog(null,"Teacher has been blocked");
