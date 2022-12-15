@@ -21,7 +21,7 @@ create table student(
 id int primary key,
 [name] nvarchar(50),
 email nvarchar(50),
-[year] int check([year]<4),
+[year] int check([year]<5),
 grade int
 )
 
