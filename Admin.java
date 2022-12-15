@@ -32,7 +32,7 @@ public void addStudent(String ID,String name,String email,String year,String cou
     }
 
 
-    public void addTeacher(int ID,String name,String email) throws SQLException{
+    public void addTeacher(String ID,String name,String email) throws SQLException{
         try{
         c = s1.connect();
         s = c.createStatement();
@@ -50,7 +50,7 @@ public void addStudent(String ID,String name,String email,String year,String cou
 
     
     
-       public void deleteStudent(int sID) throws SQLException{
+       public void deleteStudent(String sID) throws SQLException{
     try{
         c = s1.connect();
         s = c.createStatement();
@@ -66,7 +66,7 @@ public void addStudent(String ID,String name,String email,String year,String cou
                    }
    
     }
-         public void deleteTeacher(int tID) throws SQLException{
+         public void deleteTeacher(String tID) throws SQLException{
     try{
         c = s1.connect();
         s = c.createStatement();
@@ -83,7 +83,7 @@ public void addStudent(String ID,String name,String email,String year,String cou
    
     }
     
-        public void blockStudent(int stID) throws SQLException {
+        public void blockStudent(String stID) throws SQLException {
             try{
         c = s1.connect();
         s = c.createStatement();
@@ -100,7 +100,7 @@ public void addStudent(String ID,String name,String email,String year,String cou
    
     }
         
-          public void blockTeacher(int tID) throws SQLException {
+          public void blockTeacher(String tID) throws SQLException {
             try{
         c = s1.connect();
         s = c.createStatement();
