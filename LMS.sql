@@ -73,9 +73,11 @@ stdID int,
 constraint studentid1_const foreign key(stdID) references student(id),
 cID int, 
 constraint courseid3_const foreign key(cID) references course(id),
-correctQues int,
-grade int
+grade int primary key,
+gradeInLetters nvarchar(50)
 )
+
+
 
 
 
