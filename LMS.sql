@@ -69,6 +69,8 @@ constraint courseid2_const foreign key(cID) references course(id)
 
 /*7*/
 create table examScore(
+eNum int,
+constraint examNo_const foreign key(eNum) references exam(num),
 stdID int,
 constraint studentid1_const foreign key(stdID) references student(id),
 cID int, 
@@ -76,6 +78,7 @@ constraint courseid3_const foreign key(cID) references course(id),
 grade int primary key,
 gradeInLetters nvarchar(50)
 )
+
 
 
 
